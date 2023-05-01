@@ -1,9 +1,12 @@
+# > SELEKT - после выводит требуемые столбцы, если нужно вывести все столбцы таблицы, то добавляют (*)
+# > FROM - данная команда выводит требуюмую таблицу
 ## 1) Получите всю информацию о товарах из таблицы products.
 ## **SELEKT * FROM products**
 #
 ## 2) Получите название (name) и цену (price) всех товаров из таблицы products.
 ## **SELECT name, price FROM products**
 #
+# > WHERE - задает условие вывода например: цена < 3000
 ## 3) Выберите из таблицы products все записи, в которых цена (price) меньше 3000.
 ## **SELECT * FROM products WHERE price < 3000;**
 #
@@ -43,9 +46,11 @@
 ## 13) Выберите из таблицы orders все отмененные заказы исключая заказы стоимостью от 3000 до 10000 рублей включительно.
 ## **SELECT * FROM orders WHERE (status = "cancelled") AND (sum < 3000 OR sum > 10000)**
 #
+# > ORDER BY - cортировка 
 ## 14) Выберите из таблицы products все товары в порядке возрастания цены (price).
 ## **SELECT * FROM products ORDER BY (для сортировки) price**
 #
+# > ORDER BY .... (DESC) - сортировка в обратном порядке
 ## 15) Выберите из таблицы products все товары в порядке убывания цены.
 ## Выведите только имена (name) и цены (price).
 ## **SELECT name, price FROM products ORDER BY price DESC**
@@ -58,4 +63,10 @@
 ## **WHERE price < 3000** (вывод нужного значения)
 ## **ORDER BY name** (Сортировка)
 # 
-## 18)
+## 18) Выберите из таблицы users фамилии (last_name) и имена (first_name) всех пользователей.
+## Данные должны быть отсортированы сначала по фамилии, а затем по имени.
+## SELECT last_name, first_name FROM users ORDER BY last_name, first_name
+#
+## 19) Выберите из таблицы users всех пользователей с зарплатой от 40 000 рублей и выше. Данные нужно сначала отсортировать по убыванию зарплаты (salary), а затем в алфавитном порядке по имени (first_name).
+## SELECT * FROM users WHERE salary >= 40000 
+## ORDER BY salary DESC, first_name
